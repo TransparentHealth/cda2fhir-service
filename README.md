@@ -14,6 +14,11 @@ In order to make a clean install run the following:
 
 	$ cda2fhir-service> mvn clean install
 	
+To run the server locally:
+
+	$ cda2fhir-service> mvn spring-boot:run
+
+	
 ## API Overview
 The API is RESTFUL and accepts application/xml and returns the fhir results in application/json
 
