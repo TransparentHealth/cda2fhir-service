@@ -39,7 +39,7 @@ public class CdaConversionService {
        *  NOTE: this may not be necessary, its in their online docs, but it forces to the search for a
        *        customnarrative.properties file, which i just added as a blank file to solve the problem
        */
-      Config.setGenerateNarrative(true);
+      //Config.setGenerateNarrative(true);
 
       Identifier identifier = new Identifier();
       identifier.setValue("Data Processing Engine");
