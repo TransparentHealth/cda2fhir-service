@@ -44,7 +44,7 @@ The API is RESTFUL and accepts application/xml and returns the fhir results in a
   }
 ```
 
-##### POST /api/convert
+##### POST /api/convert [consumes application/xml]
 ###### Sample Request (partial)
 ```
   <?xml version="1.0" encoding="UTF-8"?>
@@ -55,6 +55,11 @@ The API is RESTFUL and accepts application/xml and returns the fhir results in a
       ...
   </ClinicalDocument>
 ```
+###### Sample curl Request
+```
+curl http://cda2fhirservice/api/convert -X POST -d @cda-filename.xml -H "Content-Type: application/xml"
+```
+
 ###### Sample Response (partial)
 ```
   {
@@ -79,7 +84,6 @@ The API is RESTFUL and accepts application/xml and returns the fhir results in a
     ]
   }  
 ```
-
 
 
 

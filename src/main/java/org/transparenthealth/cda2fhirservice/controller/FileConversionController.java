@@ -13,13 +13,12 @@ import org.transparenthealth.cda2fhirservice.service.CdaConversionService;
 @RestController
 @Data
 @Slf4j
-@RequestMapping("/api")
 public class FileConversionController {
 
   @Autowired
   private CdaConversionService cdaConversionService;
 
-  @GetMapping("/convert")
+  @GetMapping({"/", "/api/convert"})
   public ResponseEntity<GreetingDTO> convertCdaToFhirGet() {
     GreetingDTO greetingDTO = new GreetingDTO();
     greetingDTO.setMessage("Welcome to the CDA to FHIR Conversion Service");
@@ -27,7 +26,7 @@ public class FileConversionController {
     return new ResponseEntity<>(greetingDTO, HttpStatus.OK);
   }
 
-  @PostMapping(value = "/convert", consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(value = "/api/convert", consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<String> convertCdaToFhirPost(@RequestBody String cdaXML) throws RuntimeException {
     log.debug("XMl input: {}", cdaXML);
 
