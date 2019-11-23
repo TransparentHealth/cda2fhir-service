@@ -1,8 +1,16 @@
 # cda2fhir-service
 CDA To Fhir (JSON) Service uses the cda2fhir library by amida-tech to provide a service that accepts a CDA formatted XML 
-document and returns the data converted to fhir in JSON format.
+document and returns the data converted to fhir in JSON format.  It supports FHIR 3.
 
-## Installation
+# Binary Download and Install 
+
+The download allows for install in Tomcat and other tools. This service is a good 
+candidate for container services such as AWS Elastic Beanstalk.
+
+Download the WAR directly from the master branch. See `cda2fhir-service-0.0.1.war`.
+
+
+## Build Instructions Installation
 
 Apache Maven is required to build cda2fhir-service. Please visit http://maven.apache.org/ in order to install Maven on your system.
 
