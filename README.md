@@ -33,45 +33,55 @@ To run the server locally:
 	$ cda2fhir-service> mvn spring-boot:run
 
 	
-## API Overview
-The API is RESTFUL and accepts application/xml and returns the fhir results in application/json
+## API Documentation
 
-### Health Endpoints
-##### GET /actuator/health
+Perform an HTTP POST of the CCDA you wish to convert.  The response is in JSON.
+A couple other GET commands say hello and report health.
+
+
+
+### Hello
+##### Request GET /
 ###### Response
-```
-{"status":"UP"}
-```
 
-##### GET /actuator/info
-###### Response TBD
-```
-{}
-```
+    
+    {"status":"UP"}
 
-### REST API Endpoints
-  
-##### GET /api/convert
-```
-  {
-    "message" : "Welcome to the CDA to FHIR Conversion Service"
-  }
-```
 
-##### POST /api/convert [consumes application/xml]
-###### Sample Request (partial)
+
+### Hello  
+##### GET /
+###### Response
+
+     {"message" : "Welcome to the CDA to FHIR Conversion Service"}
+    
+
+### Convert
+##### Request POST /api/convert consumes `application/xml`
+
+###### Response
+
+
+
+
+###### Sample Request (partial for brevity)
+
+
+
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <ClinicalDocument xmlns="urn:hl7-org:v3">
+          <realmCode code="US"/>
+          <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+          ...
+          ...
+       </ClinicalDocument>
+
+
+
+###### Sample `curl` Request
 ```
-  <?xml version="1.0" encoding="UTF-8"?>
-  <ClinicalDocument xmlns="urn:hl7-org:v3">
-      <realmCode code="US"/>
-      <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-      ...
-      ...
-  </ClinicalDocument>
-```
-###### Sample curl Request
-```
-curl http://cda2fhirservice/api/convert -X POST -d @cda-filename.xml -H "Content-Type: application/xml"
+curl http://localhost:8080/api/convert -X POST -d @cda-filename.xml -H "Content-Type: application/xml"
 ```
 
 ###### Sample Response (partial)
