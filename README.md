@@ -2,12 +2,18 @@
 CDA To Fhir (JSON) Service uses the cda2fhir library by amida-tech to provide a service that accepts a CDA formatted XML 
 document and returns the data converted to fhir in JSON format.  It supports FHIR 3.
 
+It is built using the code called CDA2FHIR.  Its custodian has changed hands a few times. The current custodian is 
+UPMC Enterprises  https://enterprises.upmc.com/  The source code is here: https://github.com/upmc-enterprises/cda2fhir
+
+
 # Binary Download and Install 
 
 The download allows for install in Tomcat and other tools. This service is a good 
 candidate for container services such as AWS Elastic Beanstalk.
 
 Download the WAR directly from the master branch. See `cda2fhir-service-0.0.1.war`.
+
+This service is a good candidate for container services such as AWS Elastic Beanstalk.
 
 
 ## Build Instructions Installation
