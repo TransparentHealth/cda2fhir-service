@@ -2,8 +2,10 @@
 CDA To Fhir (JSON) Service uses the cda2fhir library by amida-tech to provide a service that accepts a CDA formatted XML 
 document and returns the data converted to fhir in JSON format.  It supports FHIR 3.
 
-It is built using the code called CDA2FHIR.  Its custodian has changed hands a few times. The current custodian is 
-UPMC Enterprises  https://enterprises.upmc.com/  The source code is here: https://github.com/upmc-enterprises/cda2fhir
+It is built using a library called called `cda2fhir`. The current custodian is for this project is  
+UPMC Enterprises. Their website is https://enterprises.upmc.com/.
+
+The `cda2fhir` library source code is here: https://github.com/upmc-enterprises/cda2fhir
 
 
 # Binary Download and Install 
